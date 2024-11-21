@@ -115,7 +115,9 @@
     }
 
     function motorOn() { //モータを動かす
+      console.log("motorOn中");
       if (isMotorMoving == false) {
+        console.log("isMotorMoving");
         motor_right.forward();
         motor_left.forward();
         isMotorMoving = true;
