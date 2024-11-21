@@ -10,7 +10,7 @@
 
   <!-- 追加(obnizとの接続) -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/starter-sample.css" />
+  <!-- <link rel="stylesheet" href="/css/starter-sample.css" /> -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://unpkg.com/obniz@3.22.0/obniz.js" crossorigin="anonymous"></script>
 </head>
@@ -115,15 +115,15 @@
     }
 
     function motorOn() { //モータを動かす
-      if (isMoterMoving == false) {
+      if (isMotorMoving == false) {
         motor_right.forward();
         motor_left.forward();
-        isMoterMoving = true;
+        isMotorMoving = true;
 
         setTimeout(function () { //300ms後にモータを停止
           motor_right.stop();
           motor_left.stop();
-          isMoterMoving = false;
+          isMotorMoving = false;
           MistLabel = 0;
         }, 300);
       }
