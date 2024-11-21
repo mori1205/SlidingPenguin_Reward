@@ -7,6 +7,17 @@
   <title>Unity WebGL Player | {{{PRODUCT_NAME}}}</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+
+  <!-- 追加 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/starter-sample.css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://unpkg.com/obniz@3.22.0/obniz.js" crossorigin="anonymous"></script>
+  <div id="webcam-container"></div>
+  <div id="label-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
 </head>
 
 <body>
@@ -106,7 +117,7 @@
         finishLabel = 1;
       }
     }
-    
+
     function motorOn() { //モータを動かす
       if (isMoterMoving == false) {
         motor_right.forward();
