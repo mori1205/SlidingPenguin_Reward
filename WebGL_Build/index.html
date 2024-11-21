@@ -90,6 +90,7 @@
 
     var obniz = new Obniz("4797-3778");
     var isMotorMoving = false; //モータ停止
+    var MistLabel = 0; //ミストをOnにする場合は1にする
 
     obniz.onconnect = async function () {
       motor_right = obniz.wired("DCMotor", { forward: 0, back: 4 });
@@ -106,10 +107,10 @@
     }, false);
 
     async function StartMist(message) {
-      while (finishLabel == 0) {
+      while (MistLabel == 0) {
         console.log("motorOn 前");
         motorOn();
-        finishLabel = 1;
+        MistLabel = 1;
       }
     }
 
@@ -123,7 +124,7 @@
           motor_right.stop();
           motor_left.stop();
           isMoterMoving = false;
-          finishLabel = 0;
+          MistLabel = 0;
         }, 300);
       }
     }
