@@ -93,20 +93,13 @@
     var MistLabel = 0; //ミストをOnにする場合は1にする
 
     obniz.onconnect = async function () {
-      button = obniz.wired("Button", { signal: 0, gnd: 2 });
-      motor_right = obniz.wired("DCMotor", { forward: 4, back: 6 });
-      motor_left = obniz.wired("DCMotor", { forward: 8, back: 10 });
+      motor_right = obniz.wired("DCMotor", { forward: 0, back: 4 });
+      motor_left = obniz.wired("DCMotor", { forward: 6, back: 10 });
       motor_right.power(85); // 25
       motor_left.power(85);
 
       obniz.display.clear();
       obniz.display.print("SlidingPenguin_Reward");
-
-      button.onchange = function (pressed) {
-        if (pressed) {
-          gameInstance.SendMessage('HomeUISwitcher', 'ButtonOn');
-        }
-      };
     };
 
     window.addEventListener('message', function (event) { //Unityからのメッセージを受け取る

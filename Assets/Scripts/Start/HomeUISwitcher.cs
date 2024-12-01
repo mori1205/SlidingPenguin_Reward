@@ -14,8 +14,14 @@ namespace penguin
     [SerializeField] private GameObject homeCanvas;
     [SerializeField] private GameObject adjustCanvas;
 
-    bool buttonOn = false;
-
+    public void Update()
+    {
+      // コントローラのAボタンまたはスペースキーが押された場合
+      if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Space))
+      {
+        StartCoroutine(ActivateInGameUI());
+      }
+    }
     public void ActivateHomeUI()
     {
       homeCanvas.SetActive(true);
@@ -32,20 +38,7 @@ namespace penguin
     {
       yield return new WaitForSeconds(0.8f);
       SceneManager.LoadScene("InGame");
-
-
-      if (buttonOn == true || Input.GetKey(KeyCode.Q))
-      {
-        yield return new WaitForSeconds(0.8f);
-        SceneManager.LoadScene("InGame");
-      }
     }
-
-    public void ButtonOn()
-    {
-      buttonOn = true;
-    }
-
   }
 
 }
