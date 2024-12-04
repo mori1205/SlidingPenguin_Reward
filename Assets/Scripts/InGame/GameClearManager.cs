@@ -49,6 +49,9 @@ namespace penguin
       statusManager.CurrentStatus = InGameStatus.ReachGoal;
       IsSuccess = true;
 
+      //噴射開始
+      StartMist();
+
       // UIをoffにする
       inGameUISwitcher.UnActivateInGameUI();
 
@@ -91,7 +94,6 @@ namespace penguin
 
     public static bool IsClear()
     {
-      StartMist();
       return IsSuccess;
     }
   }
